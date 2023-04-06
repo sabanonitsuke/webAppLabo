@@ -1,16 +1,8 @@
 function post() {
-  console.log("get_urlが読み込まれています")
-  let btnCheck = document.getElementById('btnCheck');
+  let btnGetURL = document.getElementById('btnGetURL');
 
-  btnCheck.addEventListener('click', function () {
-    console.log('href:' + location.href);
-    console.log('protocol:' + location.protocol);
-    console.log('host:' + location.host);
-    console.log('hostname:' + location.hostname);
-    console.log('port:' + location.port);
-    console.log('pathname:' + location.pathname);
-    console.log('search:' + location.search);
-    console.log('hash:' + location.hash);
+  btnGetURL.addEventListener('click', function () {
+    console.log('動いています');
   });
 };
 
