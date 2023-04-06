@@ -12,6 +12,10 @@ class SecretRoomsController < ApplicationController
     end
   end
 
+  def show
+    @secret_room = SecretRoom.find(params[:id])
+  end
+
   private
   def secret_room_params
     params.require(:secret_room).permit(:password)

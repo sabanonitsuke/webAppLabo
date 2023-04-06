@@ -3,3 +3,7 @@
 <input type="button" value="URLをコピー" id="btnGetURL"><br>
 
 <%= link_to '秘密の部屋作成フォーム', new_secret_room_path %><br>
+
+<% @secret_rooms.each do |r| %>
+  <%= link_to '秘密の部屋に入場', secret_room_path(r.id) %><br>
+<% end %>
