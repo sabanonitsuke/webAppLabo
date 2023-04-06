@@ -38,15 +38,15 @@ class SecretRoomsController < ApplicationController
 
   def check_password
     password = params[:password]
-    correct_password =  SecretRoom.find(params[:secret_room_id]).password # 実際のパスワードに置き換えてください
-    unless password == correct_password
+    secret_room =  SecretRoom.find(params[:secret_room_id])
+    unless password && secret_room.authenticate(params[:password])
       flash[:alert] = 'パスワードが間違っています。'
       redirect_to secret_room_password_request_path(params[:secret_room_id])
     end
   end
 
   def require_valid_password
-    unless session[:password_valid_for]&.[](params[:id]) # Using the safe navigation operator to prevent errors when session[:password_valid_for] is nil
+    unless session[:password_valid_for]&.[](params[:id])
       redirect_to secret_room_password_request_path(params[:id])
     end
   end
