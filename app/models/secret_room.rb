@@ -1,0 +1,2 @@
+class SecretRoom < ApplicationRecord
+end
