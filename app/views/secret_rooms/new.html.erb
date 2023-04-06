@@ -1,0 +1,7 @@
+<%= form_with model: @secret_room, local: true do |f| %>
+  <div>
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "送信" %>
+<% end %>
