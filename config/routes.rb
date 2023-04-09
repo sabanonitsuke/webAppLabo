@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     get 'password/request', to: 'secret_rooms#passrequest'
     post 'password/check', to: 'secret_rooms#check'
   end
+  resources :sounds, only: :index
 end
