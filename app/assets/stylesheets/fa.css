@@ -18,3 +18,11 @@
 #bell.active {
   color: gold;
 }
+
+#timer-btn {
+  color: gray;
+}
+
+#timer-btn.active {
+  color: gold;
+}
