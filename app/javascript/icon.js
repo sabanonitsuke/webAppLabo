@@ -1,4 +1,5 @@
 function sound_play() {
+  console.log("サウンド機能が読み込まれています")
   const whistle = document.getElementById('whistle');
   const bell = document.getElementById('bell');
   whistle.addEventListener('click', function () {
