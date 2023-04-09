@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     post 'password/check', to: 'secret_rooms#check'
   end
   resources :sounds, only: :index
+  get 'timer', to: 'halls#timer'
 end
