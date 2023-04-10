@@ -29,15 +29,17 @@ function random() {
 
   const nextBtn = document.getElementById('next-btn');
   const display = document.getElementById('display');
+  const remaining = document.getElementById('remaining');
   let rosters = Array.from(document.querySelectorAll('#list li')).map(li => li.textContent);
   let usedRosters = [];
 
   nextBtn.addEventListener('click', function () {
     if (rosters.length === 0) {
       display.textContent = '終了';
+      remaining.innerHTML = "0"
       return;
     }
-
+    remaining.innerHTML = rosters.length
     const randomIndex = Math.floor(Math.random() * rosters.length);
     const selectedName = rosters[randomIndex];
     display.textContent = selectedName;
