@@ -19,10 +19,18 @@
   color: gold;
 }
 
-#timer-btn {
+#play-btn {
   color: gray;
 }
 
-#timer-btn.active {
+#play-btn.active {
   color: gold;
+}
+
+#rotate-btn {
+  color: gray;
+}
+
+#rotate-btn.active {
+  color: green;
 }
