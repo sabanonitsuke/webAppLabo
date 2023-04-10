@@ -1,9 +1,10 @@
 <h1>タイマーの部屋</h1>
 <div>
-  タイマーボタン
-  <i id="timer-btn" class="fa fa-solid fa-play"></i>
+  タイマーボタン<br>
+  <i id="play-btn" class="fa fa-solid fa-play"></i>
+  <i id="rotate-btn" class="fa fa-solid fa-rotate-left"></i>
 </div>
-<div id="timer" data-time="20">20</div>
+<div id="timer" data-time = <%= @time %> ><%= @time %></div>
 
 <audio id="audio1" src="sounds/警官のホイッスル1.mp3"></audio>
 <audio id="audio2" src="sounds/警官のホイッスル2.mp3"></audio>
