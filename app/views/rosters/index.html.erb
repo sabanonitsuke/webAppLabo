@@ -1,1 +1,22 @@
 <h1>ランダムリストの部屋</h1>
+
+<h2>Roster</h2>
+<ul>
+  <li>
+    <% @rosters.each do |roster| %>
+      <%= roster.name %>
+    <% end %>
+  </li>
+</ul>
+
+<%= form_with model: @roster, local: true do |f| %>
+  <%= f.text_field :title, class:"member-form", placeholder:"メンバーを入力" %>
+  <%= f.submit "決定" ,class:"member-submit" %>
+<% end %>
+
+
+<h2>以下にランダム表示</h2>
+
+<div>ここに表示</div>
+
+<button>切り替え</button>
