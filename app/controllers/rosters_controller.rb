@@ -4,6 +4,7 @@ class RostersController < ApplicationController
     @roster = Roster.new
   end
   def create
-    
+    name = Roster.create(name: params[:name])
+    render json:{ name: name }
   end
 end

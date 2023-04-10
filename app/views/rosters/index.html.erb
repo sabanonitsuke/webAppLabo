@@ -10,7 +10,7 @@
 </ul>
 
 <%= form_with model: @roster, local: true do |f| %>
-  <%= f.text_field :title, id:"member-form", placeholder:"メンバーを入力" %>
+  <%= f.text_field :name, id:"member-form", placeholder:"メンバーを入力" %>
   <%= f.submit "決定" , id:"member-submit" %>
 <% end %>
 
