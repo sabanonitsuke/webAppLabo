@@ -1,22 +1,22 @@
 <h1>ランダムリストの部屋</h1>
 
 <h2>Roster</h2>
-<ul>
-  <li>
-    <% @rosters.each do |roster| %>
+<ul id="list">
+  <% @rosters.each do |roster| %>
+    <li>
       <%= roster.name %>
-    <% end %>
-  </li>
+    </li>
+  <% end %>
 </ul>
 
-<%= form_with model: @roster, local: true do |f| %>
-  <%= f.text_field :name, id:"member-form", placeholder:"メンバーを入力" %>
+
+<%= form_with url: "/rosters" , method: :post, id: "member-form", local: true do |f| %>
+  <%= f.text_field :name, id: "member-text", placeholder:"メンバーを入力" %>
   <%= f.submit "決定" , id:"member-submit" %>
 <% end %>
 
 
 <h2>以下にランダム表示</h2>
+<div id="display" >ここに表示</div>
 
-<div>ここに表示</div>
-
-<button>切り替え</button>
+<button id="next-btn">切り替え</button>
