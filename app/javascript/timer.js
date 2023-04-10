@@ -39,5 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   rotateBtn.addEventListener('mouseout', function () {
     rotateBtn.classList.remove('active');
   });
-
+  rotateBtn.addEventListener('click', function () {
+    location.reload();
+  });
 });
