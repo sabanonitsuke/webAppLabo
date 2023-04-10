@@ -4,6 +4,6 @@ class HallsController < ApplicationController
   end
 
   def timer
-    @time = 15
+    @time = 5
   end
 end

@@ -15,11 +15,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  function updateTimer2() {
+    timeLeft2 -= 1;
+    timerElement2.textContent = timeLeft2;
+
+    if (timeLeft2 <= 0) {
+      const audio = document.getElementById('audio3');
+      ring(audio);
+      timeLeft2 = timeLeftDef
+    }
+  };
+
   const playBtn = document.getElementById('play-btn');
   const rotateBtn = document.getElementById('rotate-btn');
   let timerElement = document.getElementById("timer");
+  const timeLeftDef = parseInt(timerElement.dataset.time);
   let timeLeft = parseInt(timerElement.dataset.time);
   let timerInterval;
+
+  const playBtn2 = document.getElementById('play-btn2');
+  let timerElement2 = document.getElementById("timer2");
+  let timeLeft2 = parseInt(timerElement2.dataset.time);
+  let timerInterval2;
+
 
   playBtn.addEventListener('click', function () {
     const audio = document.getElementById(playBtn.classList.contains('active') ? 'audio2' : 'audio1');
@@ -41,5 +59,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   rotateBtn.addEventListener('click', function () {
     location.reload();
+  });
+
+  playBtn2.addEventListener('click', function () {
+    const audio = document.getElementById(playBtn2.classList.contains('active') ? 'audio2' : 'audio1');
+    ring(audio);
+    playBtn2.classList.toggle('active');
+
+    if (playBtn2.classList.contains('active')) {
+      timerInterval2 = setInterval(updateTimer2, 1000);
+    } else {
+      clearInterval(timerInterval2);
+    }
   });
 });

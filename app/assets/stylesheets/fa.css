@@ -34,3 +34,11 @@
 #rotate-btn.active {
   color: green;
 }
+
+#play-btn2 {
+  color: gray;
+}
+
+#play-btn2.active {
+  color: gold;
+}
