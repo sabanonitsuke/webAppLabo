@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :sounds, only: :index
   get 'timer', to: 'halls#timer'
+  resources :rosters, only: [:index, :create]
 end
