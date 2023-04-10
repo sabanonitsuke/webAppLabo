@@ -2,6 +2,10 @@ function random() {
   console.log("ランダムが読み込まれています");
 
   const memberSubmit = document.getElementById('member-submit');
+  const nextBtn = document.getElementById('next-btn');
+  const display = document.getElementById('display');
+  const remaining = document.getElementById('remaining');
+  updateRosters();
 
   memberSubmit.addEventListener('click', function (e) {
     e.preventDefault();
@@ -24,14 +28,18 @@ function random() {
       `;
       list.insertAdjacentHTML("beforeend", html);
       formText.value = ""
+      onAjaxSuccess();
     };
   });
 
-  const nextBtn = document.getElementById('next-btn');
-  const display = document.getElementById('display');
-  const remaining = document.getElementById('remaining');
-  let rosters = Array.from(document.querySelectorAll('#list li')).map(li => li.textContent);
-  let usedRosters = [];
+  function onAjaxSuccess() {
+    updateRosters();
+  }
+
+  function updateRosters() {
+    rosters = Array.from(document.querySelectorAll('#list li')).map(li => li.textContent);
+    usedRosters = [];
+  }
 
   nextBtn.addEventListener('click', function () {
     if (rosters.length === 0) {
