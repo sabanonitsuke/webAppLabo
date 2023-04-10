@@ -26,6 +26,25 @@ function random() {
       formText.value = ""
     };
   });
+
+  const nextBtn = document.getElementById('next-btn');
+  const display = document.getElementById('display');
+  let rosters = Array.from(document.querySelectorAll('#list li')).map(li => li.textContent);
+  let usedRosters = [];
+
+  nextBtn.addEventListener('click', function () {
+    if (rosters.length === 0) {
+      display.textContent = '終了';
+      return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * rosters.length);
+    const selectedName = rosters[randomIndex];
+    display.textContent = selectedName;
+
+    usedRosters.push(selectedName);
+    rosters.splice(randomIndex, 1);
+  });
 };
 
 window.addEventListener('load', random);
